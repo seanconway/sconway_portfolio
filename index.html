@@ -3,35 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name — Engineering Portfolio</title>
+<title>Sean Conway — Engineering Portfolio</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="#top">Your Name</a>
-    <nav class="site-nav">
-      <a href="#refremote">RefRemote</a>
-      <a href="#capstone">Capstone</a>
-      <a href="#coilgun">Coil Gun</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <a class="brand" href="#top">Sean Conway</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-haspopup="true" aria-expanded="false" aria-controls="menu-drawer">
+      <span class="menu-icon" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
 
+<div class="drawer-overlay" id="drawer-overlay" hidden></div>
+<nav class="drawer" id="menu-drawer" aria-label="Site menu" aria-hidden="true">
+  <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+  <div class="drawer-body">
+    <div class="drawer-group">
+      <button class="drawer-dropdown-toggle" id="projects-toggle" aria-expanded="false" aria-controls="projects-dropdown">
+        Projects <span class="chevron" aria-hidden="true">&#9662;</span>
+      </button>
+      <div class="drawer-dropdown" id="projects-dropdown" hidden>
+        <a href="#refremote" class="drawer-link drawer-sublink">RefRemote</a>
+        <a href="#capstone" class="drawer-link drawer-sublink">Capstone</a>
+        <a href="#coilgun" class="drawer-link drawer-sublink">Coil Gun</a>
+      </div>
+    </div>
+    <a href="#contact" class="drawer-link">Contact</a>
+  </div>
+</nav>
+
 <main>
+
+  <!-- ================= BANNER ================= -->
+  <div class="banner">
+    <img class="banner-img" src="assets/profile/Wallpaper.png" alt="">
+  </div>
 
   <!-- ================= HERO ================= -->
   <section id="top" class="hero">
     <div class="wrap hero-inner">
       <div class="hero-photo">
         <img class="media-img" data-kind="photo" data-label="Profile photo"
-             src="assets/profile/photo.jpg" alt="Portrait of Your Name">
+             src="assets/profile/headshot.PNG" alt="Portrait of Sean Conway">
       </div>
       <div class="hero-text">
         <p class="eyebrow">Hardware / Embedded Systems Engineer</p>
-        <h1>Your Name</h1>
+        <h1>Sean Conway</h1>
         <p class="hero-tagline">
           Short one- or two-sentence summary of what you build and what you're
           looking for — e.g. "I design and build embedded electronics, from
@@ -262,7 +282,7 @@
         <span class="icon" aria-hidden="true">⌥</span> GitHub
       </a>
     </div>
-    <p class="fine-print">© <span id="year"></span> Your Name</p>
+    <p class="fine-print">© <span id="year"></span> Sean Conway</p>
   </div>
 </footer>
 

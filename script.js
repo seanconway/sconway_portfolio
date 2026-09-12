@@ -1,6 +1,53 @@
 // ---------- Footer year ----------
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// ---------- Menu drawer ----------
+const menuToggle = document.getElementById("menu-toggle");
+const drawer = document.getElementById("menu-drawer");
+const drawerOverlay = document.getElementById("drawer-overlay");
+const drawerClose = document.getElementById("drawer-close");
+const projectsToggle = document.getElementById("projects-toggle");
+const projectsDropdown = document.getElementById("projects-dropdown");
+
+function openDrawer() {
+  drawer.classList.add("open");
+  drawer.setAttribute("aria-hidden", "false");
+  drawerOverlay.hidden = false;
+  menuToggle.setAttribute("aria-expanded", "true");
+}
+
+function closeDrawer() {
+  drawer.classList.remove("open");
+  drawer.setAttribute("aria-hidden", "true");
+  drawerOverlay.hidden = true;
+  menuToggle.setAttribute("aria-expanded", "false");
+}
+
+menuToggle.addEventListener("click", () => {
+  if (drawer.classList.contains("open")) {
+    closeDrawer();
+  } else {
+    openDrawer();
+  }
+});
+
+drawerClose.addEventListener("click", closeDrawer);
+drawerOverlay.addEventListener("click", closeDrawer);
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && drawer.classList.contains("open")) closeDrawer();
+});
+
+projectsToggle.addEventListener("click", () => {
+  const expanded = projectsToggle.getAttribute("aria-expanded") === "true";
+  projectsToggle.setAttribute("aria-expanded", String(!expanded));
+  projectsDropdown.hidden = expanded;
+});
+
+drawer.querySelectorAll(".drawer-link").forEach((link) => {
+  link.addEventListener("click", closeDrawer);
+});
+
 // ---------- Tabs (RefRemote iterations) ----------
 document.querySelectorAll(".tabs").forEach((tabGroup) => {
   const tabs = tabGroup.querySelectorAll(".tab");
