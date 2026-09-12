@@ -1,0 +1,340 @@
+:root {
+  --bg: #0b0f14;
+  --bg-alt: #101720;
+  --panel: #131b26;
+  --border: #23303f;
+  --text: #e6edf3;
+  --text-dim: #93a3b3;
+  --accent: #5ee6c8;
+  --accent-dim: #2f6a5f;
+  --danger: #e6875e;
+  --radius: 8px;
+  --max-width: 1080px;
+  font-size: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Consolas", "SFMono-Regular", Menlo, Monaco, monospace;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.4em 0;
+}
+
+a { color: var(--accent); }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(11, 15, 20, 0.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.brand {
+  font-family: "Consolas", monospace;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.site-nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.site-nav a:hover { color: var(--accent); }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 72px 0 56px;
+  border-bottom: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(94,230,200,0.07), transparent 40%),
+    var(--bg);
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-photo {
+  flex: 0 0 auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--border);
+}
+
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.hero-text { flex: 1 1 380px; }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+
+.hero h1 { font-size: 2.1rem; }
+
+.hero-tagline {
+  color: var(--text-dim);
+  max-width: 46ch;
+  margin: 12px 0 20px;
+}
+
+.contact-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.88rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.contact-link:hover { border-color: var(--accent); color: var(--accent); }
+
+.contact-link .icon { font-weight: 700; }
+
+/* ---------- Section heading ---------- */
+.section-heading {
+  padding: 48px 0 8px;
+}
+
+.section-heading h2 {
+  font-size: 1.6rem;
+  color: var(--text-dim);
+}
+
+/* ---------- Project blocks ---------- */
+.project {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-header h3 { font-size: 1.5rem; }
+
+.project-sub {
+  color: var(--text-dim);
+  margin: 0 0 20px;
+}
+
+/* Tabs (RefRemote iterations) */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.tab:hover { color: var(--text); border-color: var(--accent-dim); }
+
+.tab.active {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* Media grid */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.media-item {
+  margin: 0;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.media-item-wide {
+  grid-column: 1 / -1;
+}
+
+.media-img, .media-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--bg-alt);
+  cursor: pointer;
+}
+
+.media-item-wide .media-video {
+  aspect-ratio: 16 / 9;
+  cursor: default;
+}
+
+.media-item figcaption {
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border);
+}
+
+/* Placeholder box shown when a media file is missing */
+.media-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background:
+    repeating-linear-gradient(45deg, var(--bg-alt), var(--bg-alt) 10px, #0e141b 10px, #0e141b 20px);
+  border: 1px dashed var(--border);
+  color: var(--text-dim);
+  text-align: center;
+  padding: 12px;
+  font-size: 0.78rem;
+}
+
+.media-item-wide .media-placeholder { aspect-ratio: 16 / 9; }
+
+.media-placeholder .ph-icon {
+  font-size: 1.6rem;
+  color: var(--accent-dim);
+}
+
+.media-placeholder .ph-label {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.media-placeholder .ph-path {
+  font-family: "Consolas", monospace;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  word-break: break-all;
+}
+
+.description {
+  max-width: 70ch;
+}
+
+.placeholder-text {
+  color: var(--danger);
+  font-style: italic;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding: 48px 0 64px;
+  text-align: center;
+}
+
+.footer-inner .contact-row { justify-content: center; margin: 16px 0; }
+
+.fine-print {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  margin-top: 24px;
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 40px;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+@media (max-width: 560px) {
+  .hero-inner { text-align: center; justify-content: center; }
+  .contact-row { justify-content: center; }
+}
