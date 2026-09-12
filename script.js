@@ -1,6 +1,39 @@
 // ---------- Footer year ----------
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// ---------- Copy email to clipboard ----------
+document.querySelectorAll(".copy-email").forEach((button) => {
+  const label = button.querySelector(".copy-email-label");
+  const defaultText = label.textContent;
+  const email = button.dataset.email;
+
+  function fallbackCopy() {
+    const temp = document.createElement("textarea");
+    temp.value = email;
+    temp.style.position = "fixed";
+    temp.style.opacity = "0";
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand("copy");
+    document.body.removeChild(temp);
+  }
+
+  button.addEventListener("click", () => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).catch(fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+
+    label.textContent = "Copied!";
+    button.classList.add("copied");
+    setTimeout(() => {
+      label.textContent = defaultText;
+      button.classList.remove("copied");
+    }, 1800);
+  });
+});
+
 // ---------- Menu drawer ----------
 const menuToggle = document.getElementById("menu-toggle");
 const drawer = document.getElementById("menu-drawer");
