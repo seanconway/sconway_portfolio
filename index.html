@@ -30,7 +30,10 @@
       <div class="drawer-dropdown" id="projects-dropdown" hidden>
         <a href="#refremote" class="drawer-link drawer-sublink">RefRemote</a>
         <a href="#capstone" class="drawer-link drawer-sublink">Capstone</a>
+        <a href="#smarttin" class="drawer-link drawer-sublink">SmartTin</a>
+        <a href="#fitnessslot" class="drawer-link drawer-sublink">FitnessSlot</a>
         <a href="#coilgun" class="drawer-link drawer-sublink">Coil Gun</a>
+        <a href="#mma-stopmo" class="drawer-link drawer-sublink">MMA Stop-Motion</a>
       </div>
     </div>
     <a href="#contact" class="drawer-link">Contact</a>
@@ -52,12 +55,10 @@
              src="assets/profile/headshot.PNG" alt="Portrait of Sean Conway">
       </div>
       <div class="hero-text">
-        <p class="eyebrow">Hardware / Embedded Systems Engineer</p>
+        <p class="eyebrow">Hardware & Embedded Systems Engineer</p>
         <h1>Sean Conway</h1>
         <p class="hero-tagline">
-          Short one- or two-sentence summary of what you build and what you're
-          looking for — e.g. "I design and build embedded electronics, from
-          perfboard prototypes to enclosed production PCBs."
+          Howdy! I'm Sean, a hardware and embedded systems engineer with a passion for building things that move, sense, and communicate. I enjoy taking ideas from concept to prototype to production, and I love learning new technologies along the way.
         </p>
         <div class="contact-row">
           <button class="contact-link copy-email" type="button" data-email="sean_conway@me.com">
@@ -290,6 +291,94 @@
     </div>
   </section>
 
+  <!-- ================= SMARTTIN ================= -->
+  <section id="smarttin" class="project">
+    <div class="wrap">
+      <div class="project-header">
+        <h3>SmartTin</h3>
+        <p class="project-sub">[One-line summary of the SmartTin project.]</p>
+      </div>
+      <div class="slideshow">
+        <div class="slideshow-viewport">
+          <figure class="slide active">
+            <img class="media-img" data-kind="photo" data-label="SmartTin photo 1"
+                 src="assets/SmartTin/st_1.JPEG" alt="SmartTin photo 1">
+            <figcaption>Photo</figcaption>
+          </figure>
+          <figure class="slide">
+            <img class="media-img" data-kind="photo" data-label="SmartTin photo 2"
+                 src="assets/SmartTin/st_2.JPEG" alt="SmartTin photo 2">
+            <figcaption>Photo</figcaption>
+          </figure>
+          <figure class="slide">
+            <img class="media-img" data-kind="photo" data-label="SmartTin photo 3"
+                 src="assets/SmartTin/st_3.png" alt="SmartTin photo 3">
+            <figcaption>Photo</figcaption>
+          </figure>
+          <figure class="slide">
+            <img class="media-img" data-kind="photo" data-label="SmartTin photo 4"
+                 src="assets/SmartTin/st_4.JPEG" alt="SmartTin photo 4">
+            <figcaption>Photo</figcaption>
+          </figure>
+          <figure class="slide">
+            <img class="media-img" data-kind="photo" data-label="SmartTin photo 5"
+                 src="assets/SmartTin/st_5.JPEG" alt="SmartTin photo 5">
+            <figcaption>Photo</figcaption>
+          </figure>
+          <figure class="slide">
+            <img class="media-img" data-kind="photo" data-label="SmartTin photo 6"
+                 src="assets/SmartTin/st_6.JPEG" alt="SmartTin photo 6">
+            <figcaption>Photo</figcaption>
+          </figure>
+          <figure class="slide">
+            <video class="media-video" data-label="Demo video" controls>
+              <source src="assets/SmartTin/st_7.MOV" type="video/mp4">
+            </video>
+            <figcaption>Demo video</figcaption>
+          </figure>
+          <button class="slideshow-arrow prev" aria-label="Previous slide">&#10094;</button>
+          <button class="slideshow-arrow next" aria-label="Next slide">&#10095;</button>
+        </div>
+        <div class="slideshow-dots">
+          <button class="slideshow-dot active" aria-label="Go to slide 1"></button>
+          <button class="slideshow-dot" aria-label="Go to slide 2"></button>
+          <button class="slideshow-dot" aria-label="Go to slide 3"></button>
+          <button class="slideshow-dot" aria-label="Go to slide 4"></button>
+          <button class="slideshow-dot" aria-label="Go to slide 5"></button>
+          <button class="slideshow-dot" aria-label="Go to slide 6"></button>
+          <button class="slideshow-dot" aria-label="Go to slide 7"></button>
+        </div>
+      </div>
+      <p class="description placeholder-text">
+        [Description: what SmartTin is, the problem it solves, key components/
+        architecture, and outcomes/results.]
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= FITNESSSLOT ================= -->
+  <section id="fitnessslot" class="project">
+    <div class="wrap">
+      <div class="project-header">
+        <h3>FitnessSlot</h3>
+        <p class="project-sub">[One-line summary of the FitnessSlot project.]</p>
+      </div>
+      <div class="slideshow">
+        <div class="slideshow-viewport">
+          <figure class="slide active">
+            <img class="media-img" data-kind="photo" data-label="FitnessSlot photo 1"
+                 src="assets/fitnessslot/IMG_2105.JPEG" alt="FitnessSlot photo 1">
+            <figcaption>Photo</figcaption>
+          </figure>
+        </div>
+      </div>
+      <p class="description placeholder-text">
+        [Description: what FitnessSlot is, the problem it solves, key components/
+        architecture, and outcomes/results.]
+      </p>
+    </div>
+  </section>
+
   <!-- ================= COIL GUN ================= -->
   <section id="coilgun" class="project">
     <div class="wrap">
@@ -324,7 +413,42 @@
         </div>
       </div>
       <p class="description placeholder-text">
-        A fun little physics demo project I built in college. The coil gun is a simple electromagnetic projectile launcher that uses a coil to accelerate a ferromagnetic projectile down a barrel. It uses 4 9V batteries to charge a bank of 8 4700uF capacitors, before quickly releasing their energy through a coil to induce a magnetic field that propels the projectile. The gun is operated by a 3 position switch which toggles between idle, chargining, and firing states and feaures an LED indicator which lights up when charging begins and gradually dims as the capacitor bank is charged, going dark when the gun is ready to fire. Credit: This project was inspired my the book "15 Dangetously Mad Projects for the Evil Genius" by Simon Monk.
+        A fun little physics demo project I built in college. The coil gun is a simple electromagnetic projectile launcher that uses a coil to accelerate a ferromagnetic projectile down a barrel. It uses 4 9V batteries to charge a bank of 8 4700uF capacitors, before quickly releasing their energy through a coil to induce a magnetic field that propels the projectile. The gun is operated by a 3 position switch which toggles between idle, chargining, and firing states and feaures an LED indicator which lights up when charging begins and gradually dims as the capacitor bank is charged, going dark when the gun is ready to fire. Credit: This project was inspired by the book "15 Dangetously Mad Projects for the Evil Genius" by Simon Monk.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= MMA STOP-MOTION ================= -->
+  <section id="mma-stopmo" class="project">
+    <div class="wrap">
+      <div class="project-header">
+        <h3>MMA Stop-Motion</h3>
+        <p class="project-sub">[One-line summary of the MMA stop-motion project.]</p>
+      </div>
+      <div class="slideshow">
+        <div class="slideshow-viewport">
+          <figure class="slide active">
+            <img class="media-img" data-kind="photo" data-label="MMA stop-motion photo 1"
+                 src="assets/mma_stopmo/photo1.jpg" alt="MMA stop-motion photo 1">
+            <figcaption>Photo</figcaption>
+          </figure>
+          <figure class="slide">
+            <video class="media-video" data-label="Stop-motion video" controls>
+              <source src="assets/mma_stopmo/demo.mp4" type="video/mp4">
+            </video>
+            <figcaption>Stop-motion video</figcaption>
+          </figure>
+          <button class="slideshow-arrow prev" aria-label="Previous slide">&#10094;</button>
+          <button class="slideshow-arrow next" aria-label="Next slide">&#10095;</button>
+        </div>
+        <div class="slideshow-dots">
+          <button class="slideshow-dot active" aria-label="Go to slide 1"></button>
+          <button class="slideshow-dot" aria-label="Go to slide 2"></button>
+        </div>
+      </div>
+      <p class="description placeholder-text">
+        [Description: what this stop-motion project was, the process behind it,
+        and what you learned making it.]
       </p>
     </div>
   </section>
