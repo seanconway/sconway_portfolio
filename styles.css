@@ -345,46 +345,91 @@ a { color: var(--accent); }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
-/* Media grid */
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
+/* Slideshow */
+.slideshow {
   margin-bottom: 20px;
 }
 
-.media-item {
-  margin: 0;
+.slideshow-viewport {
+  position: relative;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
 }
 
-.media-item-wide {
-  grid-column: 1 / -1;
+.slide {
+  display: none;
+  margin: 0;
+}
+
+.slide.active {
+  display: block;
 }
 
 .media-img, .media-video {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   background: var(--bg-alt);
   cursor: pointer;
 }
 
-.media-item-wide .media-video {
-  aspect-ratio: 16 / 9;
+.media-video {
   cursor: default;
 }
 
-.media-item figcaption {
+.slide figcaption {
   padding: 8px 12px;
   font-size: 0.82rem;
   color: var(--text-dim);
   border-top: 1px solid var(--border);
 }
+
+.slideshow-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(11, 15, 20, 0.6);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.slideshow-arrow:hover { border-color: var(--accent); color: var(--accent); }
+.slideshow-arrow.prev { left: 12px; }
+.slideshow-arrow.next { right: 12px; }
+
+.slideshow-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.slideshow-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background: var(--border);
+  cursor: pointer;
+}
+
+.slideshow-dot:hover { background: var(--accent-dim); }
+.slideshow-dot.active { background: var(--accent); }
 
 /* Placeholder box shown when a media file is missing */
 .media-placeholder {
@@ -394,7 +439,7 @@ a { color: var(--accent); }
   justify-content: center;
   gap: 6px;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   background:
     repeating-linear-gradient(45deg, var(--bg-alt), var(--bg-alt) 10px, #0e141b 10px, #0e141b 20px);
   border: 1px dashed var(--border);
@@ -403,8 +448,6 @@ a { color: var(--accent); }
   padding: 12px;
   font-size: 0.78rem;
 }
-
-.media-item-wide .media-placeholder { aspect-ratio: 16 / 9; }
 
 .media-placeholder .ph-icon {
   font-size: 1.6rem;

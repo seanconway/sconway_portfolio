@@ -100,12 +100,31 @@ document.querySelectorAll(".tabs").forEach((tabGroup) => {
   });
 });
 
+// ---------- Slideshows (project media) ----------
+document.querySelectorAll(".slideshow").forEach((slideshow) => {
+  const slides = slideshow.querySelectorAll(".slide");
+  const dots = slideshow.querySelectorAll(".slideshow-dot");
+  const prevBtn = slideshow.querySelector(".slideshow-arrow.prev");
+  const nextBtn = slideshow.querySelector(".slideshow-arrow.next");
+  let index = Math.max(0, [...slides].findIndex((s) => s.classList.contains("active")));
+
+  function goTo(newIndex) {
+    index = (newIndex + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+  }
+
+  prevBtn.addEventListener("click", () => goTo(index - 1));
+  nextBtn.addEventListener("click", () => goTo(index + 1));
+  dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
+});
+
 // ---------- Missing-media placeholders ----------
 // Any <img class="media-img"> or <video class="media-video"> whose source
 // file doesn't exist gets swapped for a labeled placeholder box, so it's
 // obvious what to add and where it belongs.
 
-function buildPlaceholder(kind, label, src, wide) {
+function buildPlaceholder(kind, label, src) {
   const icons = { photo: "📷", schematic: "🗺", render: "🧩", video: "▶" };
   const box = document.createElement("div");
   box.className = "media-placeholder";
@@ -147,9 +166,8 @@ document.querySelectorAll("video.media-video").forEach((video) => {
     if (swapped) return;
     swapped = true;
     const label = video.dataset.label || "Video";
-    const wide = video.closest(".media-item-wide") !== null;
     const src = source ? source.getAttribute("src") : "";
-    const placeholder = buildPlaceholder("video", label, src, wide);
+    const placeholder = buildPlaceholder("video", label, src);
     video.replaceWith(placeholder);
   }
 
