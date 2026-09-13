@@ -44,29 +44,18 @@ a { color: var(--accent); }
   position: sticky;
   top: 0;
   z-index: 20;
+  height: 60px;
   background: rgba(11, 15, 20, 0.85);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border);
 }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-}
-
-.brand {
-  font-family: "Consolas", monospace;
-  font-weight: 700;
-  color: var(--text);
-  text-decoration: none;
-  font-size: 1.05rem;
-}
-
 /* ---------- Menu toggle (hamburger) ---------- */
 .menu-toggle {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
   width: 40px;
   height: 40px;
   padding: 0;
@@ -78,30 +67,29 @@ a { color: var(--accent); }
 
 .menu-toggle:hover { border-color: var(--accent-dim); }
 
-.menu-icon,
-.menu-icon::before,
-.menu-icon::after {
-  content: "";
-  position: absolute;
-  left: 9px;
-  right: 9px;
-  height: 2px;
-  background: var(--text);
+.menu-icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.menu-icon line {
+  transform-box: fill-box;
+  transform-origin: center;
   transition: transform 0.15s, opacity 0.15s;
 }
 
-.menu-icon { top: 19px; }
-.menu-icon::before { top: -7px; }
-.menu-icon::after { top: 7px; }
-
-.menu-toggle[aria-expanded="true"] .menu-icon {
-  background: transparent;
+.menu-toggle[aria-expanded="true"] .menu-icon line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
 }
-.menu-toggle[aria-expanded="true"] .menu-icon::before {
-  transform: translateY(7px) rotate(45deg);
+.menu-toggle[aria-expanded="true"] .menu-icon line:nth-child(2) {
+  opacity: 0;
 }
-.menu-toggle[aria-expanded="true"] .menu-icon::after {
-  transform: translateY(-7px) rotate(-45deg);
+.menu-toggle[aria-expanded="true"] .menu-icon line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* ---------- Drawer ---------- */
@@ -249,7 +237,7 @@ a { color: var(--accent); }
   box-shadow: 0 0 0 2px var(--border);
 }
 
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; display: block; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block; }
 
 .hero-text { flex: 1 1 380px; padding-top: 16px; }
 
