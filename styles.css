@@ -283,6 +283,12 @@ a { color: var(--accent); }
 
 .contact-link .icon { font-weight: 700; }
 
+.contact-link .icon-svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
 .copy-email.copied { border-color: var(--accent); color: var(--accent); }
 
 /* ---------- Section heading ---------- */
