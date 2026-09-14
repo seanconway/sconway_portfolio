@@ -371,7 +371,7 @@ a { color: var(--accent); }
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
   background: var(--bg-alt);
   cursor: pointer;
 }
