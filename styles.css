@@ -467,12 +467,11 @@ a { color: var(--accent); }
 }
 
 .description {
-  max-width: 70ch;
+  text-align: center;
 }
 
 .placeholder-text {
-  color: var(--danger);
-  font-style: italic;
+  color: var(--text);
 }
 
 /* ---------- Footer ---------- */
