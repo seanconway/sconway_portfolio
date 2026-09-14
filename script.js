@@ -114,8 +114,8 @@ document.querySelectorAll(".slideshow").forEach((slideshow) => {
     dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
   }
 
-  prevBtn.addEventListener("click", () => goTo(index - 1));
-  nextBtn.addEventListener("click", () => goTo(index + 1));
+  if (prevBtn) prevBtn.addEventListener("click", () => goTo(index - 1));
+  if (nextBtn) nextBtn.addEventListener("click", () => goTo(index + 1));
   dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
 });
 
