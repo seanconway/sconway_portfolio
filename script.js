@@ -101,7 +101,7 @@ document.querySelectorAll(".tabs").forEach((tabGroup) => {
 });
 
 // ---------- Slideshows (project media) ----------
-document.querySelectorAll(".slideshow").forEach((slideshow) => {
+function initSlideshow(slideshow) {
   const slides = slideshow.querySelectorAll(".slide");
   const dots = slideshow.querySelectorAll(".slideshow-dot");
   const prevBtn = slideshow.querySelector(".slideshow-arrow.prev");
@@ -117,6 +117,93 @@ document.querySelectorAll(".slideshow").forEach((slideshow) => {
   if (prevBtn) prevBtn.addEventListener("click", () => goTo(index - 1));
   if (nextBtn) nextBtn.addEventListener("click", () => goTo(index + 1));
   dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
+}
+
+// ---------- Auto-populated photo galleries ----------
+// A slideshow-viewport with data-gallery="assets/x/" pulls its photo slides
+// from that folder's manifest.json (built by scripts/build-galleries.mjs),
+// in the order listed there, and inserts them before any fixed (non-photo)
+// slides already in the markup, such as a demo video.
+
+function buildPhotoSlide(folder, file, caption) {
+  const label = `${folder.replace(/\/+$/, "").split("/").pop()} photo`;
+
+  const figure = document.createElement("figure");
+  figure.className = "slide";
+
+  let mediaParent = figure;
+  if (caption) {
+    mediaParent = document.createElement("div");
+    mediaParent.className = "media-frame";
+    figure.appendChild(mediaParent);
+  }
+
+  const img = document.createElement("img");
+  img.className = "media-img";
+  img.dataset.kind = "photo";
+  img.dataset.label = label;
+  img.src = folder + file;
+  img.alt = label;
+  mediaParent.appendChild(img);
+
+  if (caption) {
+    const span = document.createElement("span");
+    span.className = "media-caption";
+    span.textContent = caption;
+    mediaParent.appendChild(span);
+  }
+
+  const figcaption = document.createElement("figcaption");
+  figcaption.textContent = "Photo";
+  figure.appendChild(figcaption);
+
+  return figure;
+}
+
+async function fetchJSON(url) {
+  try {
+    const res = await fetch(url);
+    return res.ok ? await res.json() : null;
+  } catch {
+    return null;
+  }
+}
+
+async function loadGallery(viewport) {
+  const folder = viewport.dataset.gallery;
+  const [files, captions] = await Promise.all([
+    fetchJSON(folder + "manifest.json"),
+    fetchJSON(folder + "captions.json"),
+  ]);
+
+  const anchor = viewport.querySelector(".slide.fixed") || viewport.querySelector(".slideshow-arrow.prev");
+  (files || []).forEach((file) => {
+    const figure = buildPhotoSlide(folder, file, captions && captions[file]);
+    viewport.insertBefore(figure, anchor);
+  });
+
+  const slides = viewport.querySelectorAll(".slide");
+  slides.forEach((slide, i) => slide.classList.toggle("active", i === 0));
+
+  const dotsContainer = viewport.closest(".slideshow").querySelector(".slideshow-dots");
+  if (dotsContainer) {
+    dotsContainer.innerHTML = "";
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.className = "slideshow-dot" + (i === 0 ? " active" : "");
+      dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+      dotsContainer.appendChild(dot);
+    });
+  }
+}
+
+document.querySelectorAll(".slideshow").forEach((slideshow) => {
+  const galleryViewport = slideshow.querySelector(".slideshow-viewport[data-gallery]");
+  if (galleryViewport) {
+    loadGallery(galleryViewport).then(() => initSlideshow(slideshow));
+  } else {
+    initSlideshow(slideshow);
+  }
 });
 
 // ---------- Missing-media placeholders ----------

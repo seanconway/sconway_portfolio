@@ -380,6 +380,37 @@ a { color: var(--accent); }
   cursor: default;
 }
 
+.media-frame {
+  position: relative;
+}
+
+.media-frame .media-img {
+  transition: filter 0.2s;
+}
+
+.media-frame:hover .media-img {
+  filter: brightness(0.4);
+}
+
+.media-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 16px;
+  text-align: center;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.media-frame:hover .media-caption {
+  opacity: 1;
+}
+
 .slide figcaption {
   padding: 8px 12px;
   font-size: 0.82rem;

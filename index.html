@@ -55,10 +55,10 @@
              src="assets/profile/headshot.PNG" alt="Portrait of Sean Conway">
       </div>
       <div class="hero-text">
-        <p class="eyebrow">Hardware & Embedded Systems Engineer</p>
+        <p class="eyebrow">Embedded Systems & Hardware Engineer</p>
         <h1>Sean Conway</h1>
         <p class="hero-tagline">
-          Howdy! I'm Sean, a hardware and embedded systems engineer with a passion for building things that move, sense, and communicate. I enjoy taking ideas from concept to prototype to production, and I love learning new technologies along the way.
+          Howdy! I'm Sean, a embedded systems and hardware engineer with a passion for building things that move, sense, and communicate. I enjoy taking ideas from concept to prototype to production, and I love learning new technologies along the way.
         </p>
         <div class="contact-row">
           <button class="contact-link copy-email" type="button" data-email="sean_conway@me.com">
@@ -296,36 +296,11 @@
     <div class="wrap">
       <div class="project-header">
         <h3>SmartTin</h3>
-        <p class="project-sub">[One-line summary of the SmartTin project.]</p>
+        <p class="project-sub">Accountability tool for nicotine pouch users</p>
       </div>
       <div class="slideshow">
-        <div class="slideshow-viewport">
-          <figure class="slide active">
-            <img class="media-img" data-kind="photo" data-label="SmartTin photo 1"
-                 src="assets/SmartTin/st_1.JPEG" alt="SmartTin photo 1">
-            <figcaption>Photo</figcaption>
-          </figure>
-          <figure class="slide">
-            <img class="media-img" data-kind="photo" data-label="SmartTin photo 2"
-                 src="assets/SmartTin/st_2.JPEG" alt="SmartTin photo 2">
-            <figcaption>Photo</figcaption>
-          </figure>
-          <figure class="slide">
-            <img class="media-img" data-kind="photo" data-label="SmartTin photo 3"
-                 src="assets/SmartTin/st_3.png" alt="SmartTin photo 3">
-            <figcaption>Photo</figcaption>
-          </figure>
-          <figure class="slide">
-            <img class="media-img" data-kind="photo" data-label="SmartTin photo 4"
-                 src="assets/SmartTin/st_4.JPEG" alt="SmartTin photo 4">
-            <figcaption>Photo</figcaption>
-          </figure>
-          <figure class="slide">
-            <img class="media-img" data-kind="photo" data-label="SmartTin photo 5"
-                 src="assets/SmartTin/st_5.JPEG" alt="SmartTin photo 5">
-            <figcaption>Photo</figcaption>
-          </figure>
-          <figure class="slide">
+        <div class="slideshow-viewport" data-gallery="assets/SmartTin/">
+          <figure class="slide fixed">
             <iframe class="media-video" src="https://www.youtube.com/embed/DWNDRpGQLV4?rel=0"
                     title="SmartTin Demo" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -335,14 +310,7 @@
           <button class="slideshow-arrow prev" aria-label="Previous slide">&#10094;</button>
           <button class="slideshow-arrow next" aria-label="Next slide">&#10095;</button>
         </div>
-        <div class="slideshow-dots">
-          <button class="slideshow-dot active" aria-label="Go to slide 1"></button>
-          <button class="slideshow-dot" aria-label="Go to slide 2"></button>
-          <button class="slideshow-dot" aria-label="Go to slide 3"></button>
-          <button class="slideshow-dot" aria-label="Go to slide 4"></button>
-          <button class="slideshow-dot" aria-label="Go to slide 5"></button>
-          <button class="slideshow-dot" aria-label="Go to slide 6"></button>
-        </div>
+        <div class="slideshow-dots"></div>
       </div>
       <p class="description placeholder-text">
         [Description: what SmartTin is, the problem it solves, key components/
@@ -359,16 +327,14 @@
         <p class="project-sub">Exercise randomizer</p>
       </div>
       <div class="slideshow">
-        <div class="slideshow-viewport">
-          <figure class="slide active">
-            <img class="media-img" data-kind="photo" data-label="FitnessSlot photo 1"
-                 src="assets/fitnessslot/IMG_2105.JPEG" alt="FitnessSlot photo 1">
-            <figcaption>Photo</figcaption>
-          </figure>
+        <div class="slideshow-viewport" data-gallery="assets/fitnessslot/">
+          <button class="slideshow-arrow prev" aria-label="Previous slide">&#10094;</button>
+          <button class="slideshow-arrow next" aria-label="Next slide">&#10095;</button>
         </div>
+        <div class="slideshow-dots"></div>
       </div>
       <p class="description placeholder-text">
-        I build this device to randomly display a new excercise from a list each time it is turned on in order to introduce an element of random variability to my fitness habits and break up long work sessions with brief exercise using the pomodoro method. Breadboard device consisting of an ESP32C3-Supermini dev board, LCD display, battery and power switch. The ESP32 runs a simple Arduino IDE program that remembers which excercises have already been displayed on each traversal of the list to reduce repitition and randomly selects a new excercise from the remaining list each time the device is powered on.
+        A device I built for my personal use to randomly display a new excercise from a list each time it is turned on in order to introduce an element of random variability to my fitness habits and break up long work sessions with brief exercise using the pomodoro method. Breadboard device consisting of an ESP32C3-Supermini dev board, LCD display, battery and power switch. The ESP32 runs a simple Arduino IDE program that remembers which excercises have already been displayed on each traversal of the list to reduce repitition and randomly selects a new excercise from the remaining list each time the device is powered on.
       </p>
     </div>
   </section>
@@ -380,18 +346,8 @@
         <h3>Coil Gun</h3>
       </div>
       <div class="slideshow">
-        <div class="slideshow-viewport">
-          <figure class="slide active">
-            <img class="media-img" data-kind="photo" data-label="Coil gun photo 1"
-                 src="assets/coilgun/coilgun_1.JPEG" alt="Coil gun build photo 1">
-            <figcaption>Photo</figcaption>
-          </figure>
-          <figure class="slide">
-            <img class="media-img" data-kind="photo" data-label="Coil gun photo 2"
-                 src="assets/coilgun/coilgun_2.JPEG" alt="Coil gun build photo 2">
-            <figcaption>Photo</figcaption>
-          </figure>
-          <figure class="slide">
+        <div class="slideshow-viewport" data-gallery="assets/coilgun/">
+          <figure class="slide fixed">
             <iframe class="media-video" src="https://www.youtube.com/embed/g9KO79_rQW8?rel=0"
                     title="Coil Gun Demo" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -401,11 +357,7 @@
           <button class="slideshow-arrow prev" aria-label="Previous slide">&#10094;</button>
           <button class="slideshow-arrow next" aria-label="Next slide">&#10095;</button>
         </div>
-        <div class="slideshow-dots">
-          <button class="slideshow-dot active" aria-label="Go to slide 1"></button>
-          <button class="slideshow-dot" aria-label="Go to slide 2"></button>
-          <button class="slideshow-dot" aria-label="Go to slide 3"></button>
-        </div>
+        <div class="slideshow-dots"></div>
       </div>
       <p class="description placeholder-text">
         A fun little physics demo project I built in college. The coil gun is a simple electromagnetic projectile launcher that uses a coil to accelerate a ferromagnetic projectile down a barrel. It uses 4 9V batteries to charge a bank of 8 4700uF capacitors, before quickly releasing their energy through a coil to induce a magnetic field that propels the projectile. The gun is operated by a 3 position switch which toggles between idle, chargining, and firing states and feaures an LED indicator which lights up when charging begins and gradually dims as the capacitor bank is charged, going dark when the gun is ready to fire. Credit: This project was inspired by the book "15 Dangerously Mad Projects for the Evil Genius" by Simon Monk.
