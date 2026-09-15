@@ -28,7 +28,9 @@
         Projects <span class="chevron" aria-hidden="true">&#9662;</span>
       </button>
       <div class="drawer-dropdown" id="projects-dropdown" hidden>
-        <a href="#refremote" class="drawer-link drawer-sublink">RefRemote</a>
+        <a href="#refremote-poc" class="drawer-link drawer-sublink">RefRemote Proof-of-Concept</a>
+        <a href="#refremote-v0" class="drawer-link drawer-sublink">RefRemote V0</a>
+        <a href="#refremote-v1" class="drawer-link drawer-sublink">RefRemote V1</a>
         <a href="#capstone" class="drawer-link drawer-sublink">Capstone</a>
         <a href="#smarttin" class="drawer-link drawer-sublink">SmartTin</a>
         <a href="#fitnessslot" class="drawer-link drawer-sublink">FitnessSlot</a>
@@ -82,164 +84,66 @@
     <h2>Projects</h2>
   </section>
 
-  <!-- ================= REFREMOTE ================= -->
-  <section id="refremote" class="project">
+  <!-- ================= REFREMOTE PROOF-OF-CONCEPT ================= -->
+  <section id="refremote-poc" class="project">
     <div class="wrap">
       <div class="project-header">
-        <h3>RefRemote</h3>
-        <p class="project-sub">Developed by iteration — from a perfboard prototype through three PCB revisions.</p>
+        <h3>RefRemote Proof-of-Concept</h3>
+        <p class="project-sub">Perfboard prototype validating the concept end-to-end.</p>
       </div>
-
-      <div class="tabs" role="tablist" aria-label="RefRemote iterations">
-        <button class="tab active" role="tab" aria-selected="true" data-target="iter-perfboard">Perfboard Prototype</button>
-        <button class="tab" role="tab" aria-selected="false" data-target="iter-pcb1">PCB Rev 1</button>
-        <button class="tab" role="tab" aria-selected="false" data-target="iter-pcb2">PCB Rev 2</button>
-        <button class="tab" role="tab" aria-selected="false" data-target="iter-pcb3">PCB Rev 3</button>
-      </div>
-
-      <!-- Perfboard -->
-      <div class="tab-panel active" id="iter-perfboard">
-        <div class="slideshow">
-          <div class="slideshow-viewport">
-            <figure class="slide active">
-              <img class="media-img" data-kind="photo" data-label="Perfboard prototype photo"
-                   src="assets/refremote/perfboard/photo.jpg" alt="Perfboard prototype">
-              <figcaption>Photo</figcaption>
-            </figure>
-            <figure class="slide">
-              <img class="media-img" data-kind="schematic" data-label="Perfboard prototype schematic"
-                   src="assets/refremote/perfboard/schematic.png" alt="Schematic">
-              <figcaption>Schematic</figcaption>
-            </figure>
-            <figure class="slide">
-              <video class="media-video" data-label="Demo video" controls>
-                <source src="assets/refremote/perfboard/demo.mp4" type="video/mp4">
-              </video>
-              <figcaption>Demo video</figcaption>
-            </figure>
-            <button class="slideshow-arrow prev" aria-label="Previous slide">&#10094;</button>
-            <button class="slideshow-arrow next" aria-label="Next slide">&#10095;</button>
-          </div>
-          <div class="slideshow-dots">
-            <button class="slideshow-dot active" aria-label="Go to slide 1"></button>
-            <button class="slideshow-dot" aria-label="Go to slide 2"></button>
-            <button class="slideshow-dot" aria-label="Go to slide 3"></button>
-          </div>
+      <div class="slideshow">
+        <div class="slideshow-viewport" data-gallery="assets/refremote/poc/">
+          <button class="slideshow-arrow prev" aria-label="Previous slide">&#10094;</button>
+          <button class="slideshow-arrow next" aria-label="Next slide">&#10095;</button>
         </div>
-        <p class="description placeholder-text">
-          [Description: what this first prototype was built to prove out, key
-          components/architecture, and what you learned that shaped Rev 1.]
-        </p>
+        <div class="slideshow-dots"></div>
       </div>
+      <p class="description placeholder-text">
+        [Description: what this proof-of-concept was built to prove out, key
+        components/architecture, and what you learned that shaped V0.]
+      </p>
+    </div>
+  </section>
 
-      <!-- PCB 1 -->
-      <div class="tab-panel" id="iter-pcb1">
-        <div class="slideshow">
-          <div class="slideshow-viewport">
-            <figure class="slide active">
-              <img class="media-img" data-kind="photo" data-label="PCB Rev 1 photo"
-                   src="assets/refremote/pcb1/photo.jpg" alt="PCB Rev 1">
-              <figcaption>Photo</figcaption>
-            </figure>
-            <figure class="slide">
-              <img class="media-img" data-kind="schematic" data-label="PCB Rev 1 schematic"
-                   src="assets/refremote/pcb1/schematic.png" alt="Schematic">
-              <figcaption>Schematic</figcaption>
-            </figure>
-            <figure class="slide">
-              <img class="media-img" data-kind="render" data-label="PCB Rev 1 design / render"
-                   src="assets/refremote/pcb1/render.png" alt="PCB design and render">
-              <figcaption>PCB design and render</figcaption>
-            </figure>
-            <button class="slideshow-arrow prev" aria-label="Previous slide">&#10094;</button>
-            <button class="slideshow-arrow next" aria-label="Next slide">&#10095;</button>
-          </div>
-          <div class="slideshow-dots">
-            <button class="slideshow-dot active" aria-label="Go to slide 1"></button>
-            <button class="slideshow-dot" aria-label="Go to slide 2"></button>
-            <button class="slideshow-dot" aria-label="Go to slide 3"></button>
-          </div>
+  <!-- ================= REFREMOTE V0 ================= -->
+  <section id="refremote-v0" class="project">
+    <div class="wrap">
+      <div class="project-header">
+        <h3>RefRemote V0</h3>
+        <p class="project-sub">First PCB revisions — bare board through enclosure.</p>
+      </div>
+      <div class="slideshow">
+        <div class="slideshow-viewport" data-gallery="assets/refremote/v0/">
+          <button class="slideshow-arrow prev" aria-label="Previous slide">&#10094;</button>
+          <button class="slideshow-arrow next" aria-label="Next slide">&#10095;</button>
         </div>
-        <p class="description placeholder-text">
-          [Description: first PCB revision — what moved off perfboard, design
-          decisions, and issues found in this rev.]
-        </p>
+        <div class="slideshow-dots"></div>
       </div>
+      <p class="description placeholder-text">
+        [Description: moving off perfboard onto a PCB, design decisions, adding
+        the enclosure, and issues found across these revisions.]
+      </p>
+    </div>
+  </section>
 
-      <!-- PCB 2 -->
-      <div class="tab-panel" id="iter-pcb2">
-        <div class="slideshow">
-          <div class="slideshow-viewport">
-            <figure class="slide active">
-              <img class="media-img" data-kind="photo" data-label="PCB Rev 2 photo (unenclosed)"
-                   src="assets/refremote/pcb2/photo-unenclosed.jpg" alt="PCB Rev 2 unenclosed">
-              <figcaption>Photo — unenclosed</figcaption>
-            </figure>
-            <figure class="slide">
-              <img class="media-img" data-kind="photo" data-label="PCB Rev 2 photo (enclosed)"
-                   src="assets/refremote/pcb2/photo-enclosed.jpg" alt="PCB Rev 2 enclosed">
-              <figcaption>Photo — enclosed</figcaption>
-            </figure>
-            <figure class="slide">
-              <img class="media-img" data-kind="schematic" data-label="PCB Rev 2 schematic"
-                   src="assets/refremote/pcb2/schematic.png" alt="Schematic">
-              <figcaption>Schematic</figcaption>
-            </figure>
-            <figure class="slide">
-              <img class="media-img" data-kind="render" data-label="PCB Rev 2 design / render"
-                   src="assets/refremote/pcb2/render.png" alt="PCB design and render">
-              <figcaption>PCB design and render</figcaption>
-            </figure>
-            <figure class="slide">
-              <img class="media-img" data-kind="render" data-label="Enclosure design (exploded view)"
-                   src="assets/refremote/pcb2/enclosure-exploded.png" alt="Enclosure design exploded view">
-              <figcaption>Enclosure design (exploded view)</figcaption>
-            </figure>
-            <button class="slideshow-arrow prev" aria-label="Previous slide">&#10094;</button>
-            <button class="slideshow-arrow next" aria-label="Next slide">&#10095;</button>
-          </div>
-          <div class="slideshow-dots">
-            <button class="slideshow-dot active" aria-label="Go to slide 1"></button>
-            <button class="slideshow-dot" aria-label="Go to slide 2"></button>
-            <button class="slideshow-dot" aria-label="Go to slide 3"></button>
-            <button class="slideshow-dot" aria-label="Go to slide 4"></button>
-            <button class="slideshow-dot" aria-label="Go to slide 5"></button>
-          </div>
+  <!-- ================= REFREMOTE V1 ================= -->
+  <section id="refremote-v1" class="project">
+    <div class="wrap">
+      <div class="project-header">
+        <h3>RefRemote V1</h3>
+        <p class="project-sub">Latest revision.</p>
+      </div>
+      <div class="slideshow">
+        <div class="slideshow-viewport" data-gallery="assets/refremote/v1/">
+          <button class="slideshow-arrow prev" aria-label="Previous slide">&#10094;</button>
+          <button class="slideshow-arrow next" aria-label="Next slide">&#10095;</button>
         </div>
-        <p class="description placeholder-text">
-          [Description: adding the enclosure — mechanical constraints, fit/finish
-          decisions, connector placement, and any changes carried back into the PCB.]
-        </p>
+        <div class="slideshow-dots"></div>
       </div>
-
-      <!-- PCB 3 -->
-      <div class="tab-panel" id="iter-pcb3">
-        <div class="slideshow">
-          <div class="slideshow-viewport">
-            <figure class="slide active">
-              <img class="media-img" data-kind="schematic" data-label="PCB Rev 3 schematic"
-                   src="assets/refremote/pcb3/schematic.png" alt="Schematic">
-              <figcaption>Schematic</figcaption>
-            </figure>
-            <figure class="slide">
-              <img class="media-img" data-kind="render" data-label="PCB Rev 3 design / render"
-                   src="assets/refremote/pcb3/render.png" alt="PCB design and render">
-              <figcaption>PCB design and render</figcaption>
-            </figure>
-            <button class="slideshow-arrow prev" aria-label="Previous slide">&#10094;</button>
-            <button class="slideshow-arrow next" aria-label="Next slide">&#10095;</button>
-          </div>
-          <div class="slideshow-dots">
-            <button class="slideshow-dot active" aria-label="Go to slide 1"></button>
-            <button class="slideshow-dot" aria-label="Go to slide 2"></button>
-          </div>
-        </div>
-        <p class="description placeholder-text">
-          [Description: latest/current revision — what's final about this design,
-          remaining known issues, next steps.]
-        </p>
-      </div>
-
+      <p class="description placeholder-text">
+        [Description: what's final about this design, remaining known issues,
+        next steps.]
+      </p>
     </div>
   </section>
 
