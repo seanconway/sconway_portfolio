@@ -197,13 +197,30 @@ async function loadGallery(viewport) {
   }
 }
 
+const galleryLoads = [];
 document.querySelectorAll(".slideshow").forEach((slideshow) => {
   const galleryViewport = slideshow.querySelector(".slideshow-viewport[data-gallery]");
   if (galleryViewport) {
-    loadGallery(galleryViewport).then(() => initSlideshow(slideshow));
+    galleryLoads.push(loadGallery(galleryViewport).then(() => initSlideshow(slideshow)));
   } else {
     initSlideshow(slideshow);
   }
+});
+
+// ---------- Gallery page: grid of every project photo ----------
+Promise.all(galleryLoads).then(() => {
+  const grid = document.getElementById("media-grid");
+  if (!grid) return;
+
+  document.querySelectorAll(".project .slideshow-viewport img.media-img[data-kind='photo']").forEach((img) => {
+    const clone = document.createElement("img");
+    clone.className = "media-img";
+    clone.dataset.kind = "photo";
+    clone.dataset.label = img.dataset.label || "";
+    clone.src = img.src;
+    clone.alt = img.alt;
+    grid.appendChild(clone);
+  });
 });
 
 // ---------- Missing-media placeholders ----------
