@@ -33,7 +33,6 @@
         <a href="#smarttin" class="drawer-link drawer-sublink">SmartTin</a>
         <a href="#fitnessslot" class="drawer-link drawer-sublink">FitnessSlot</a>
         <a href="#coilgun" class="drawer-link drawer-sublink">Coil Gun</a>
-        <a href="#mma-stopmo" class="drawer-link drawer-sublink">MMA Stop-Motion</a>
       </div>
     </div>
     <a href="#contact" class="drawer-link">Contact</a>
@@ -249,7 +248,7 @@
     <div class="wrap">
       <div class="project-header">
         <h3>Capstone</h3>
-        <p class="project-sub">[One-line summary of the capstone project.]</p>
+        <p class="project-sub">mmWave Radar 3D Imaging System</p>
       </div>
       <div class="slideshow">
         <div class="slideshow-viewport" data-gallery="assets/capstone/">
@@ -266,8 +265,27 @@
         <div class="slideshow-dots"></div>
       </div>
       <p class="description placeholder-text">
-        [Description: what the capstone project was, your role, the problem it
-        solved, technologies used, and outcomes/results.]
+        This capstone project is a proof-of-concept security screening platform that fuses four independent sensing modalities:
+        millimeter-wave synthetic aperture radar, infrared imaging, visible-light facial recognition, and Bluetooth-integrated metal detection,
+        into a single operator dashboard for concealed weapon detection. Built as an iteration on a prior capstone team's gantry and radar hardware,
+        the project's core challenge was improving the mmWave radar imaging resolution and speed while making disparate subsystems
+        (a Raspberry Pi, a Windows radar workstation, and a BLE-connected ESP32-based metal detector wand) work together as one coherent,
+        real-time system.
+
+        In my role as Systems Integration Engineer, I was responsible for architecting how the independent subsystems
+        communicated and combined into a unified product. Troubleshooting the system bring-up was a major challenge, as the hardware and
+        software were handed off from the previous team and had to be reverse-engineered and reimplemented before they could be utilized,
+        iterated upon, and integrated with novel functionality. I contributed significantly to every aspect of the system's functionality.
+        While the gantry's mechanical design and radar hardware were largely unchanged from the previous team, I replaced the gantry motors
+        with internal-encoder motors to improve travel consistency, substantially modified the radar imaging software to improve image
+        quality and scan speed, and moved the orchestration between the laptop running mmWave Studio and the Raspberry Pi running motor
+        control from SSH automation to a TCP socket-based communication protocol to reduce uplink timing variability. Additionally, the
+        metal detector wand, infrared camera stream and object detection, facial recognition features, and the user-facing dashboard were
+        all novel additions I took a leading role in designing and implementing.
+        <br><br>
+        <a href="assets/capstone/Final_Technical_Report.pdf" target="_blank" rel="noopener">Final Technical Report</a>
+        &nbsp;|&nbsp;
+        <a href="https://github.com/seanconway/PeekIR_Final" target="_blank" rel="noopener">GitHub Repo</a>
       </p>
     </div>
   </section>
@@ -342,29 +360,6 @@
       </div>
       <p class="description placeholder-text">
         A fun little physics demo project I built in college. The coil gun is a simple electromagnetic projectile launcher that uses a coil to accelerate a ferromagnetic projectile down a barrel. It uses 4 9V batteries to charge a bank of 8 4700uF capacitors, before quickly releasing their energy through a coil to induce a magnetic field that propels the projectile. The gun is operated by a 3 position switch which toggles between idle, chargining, and firing states and feaures an LED indicator which lights up when charging begins and gradually dims as the capacitor bank is charged, going dark when the gun is ready to fire. Credit: This project was inspired by the book "15 Dangerously Mad Projects for the Evil Genius" by Simon Monk.
-      </p>
-    </div>
-  </section>
-
-  <!-- ================= MMA STOP-MOTION ================= -->
-  <section id="mma-stopmo" class="project">
-    <div class="wrap">
-      <div class="project-header">
-        <h3>MMA Stop-Motion</h3>
-      </div>
-      <div class="slideshow">
-        <div class="slideshow-viewport">
-          <figure class="slide active">
-            <iframe class="media-video" src="https://www.youtube.com/embed/R3oNc4ZLoLo?rel=0"
-                    title="MMA Stop-Motion" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            <figcaption>Stop-motion video</figcaption>
-          </figure>
-        </div>
-      </div>
-      <p class="description placeholder-text">
-        A stop motion demonstration of a number of mixed martial arts techniques. Uses 3D printed Dummy 13 figures to demonstate the biomechanics of various techniques. I used FILM (Frame Interpolation for Large Motion) python library to interpolate frames between the stop-motion frames to create a smoother video accepting the tradeoff of some visual artifacts. Just something I had fun putting together and like to share. Techniques demonstrated: 1. Counter Cross, 2. Osoto Gari (Major Outside Reap), 3. Overhand right single leg entry -> golf swing finish, 4. Lead leg teep -> tomahawk elbow -> left hook, 5. Front Kick, 6. Superman Punch, 7. Roundhouse Head Kick, 8. High-C -> Run the pipe -> lift, 9. Wheel Kick, 10. Taio Toshi (body drop), 11. Flying Knee, 12. Body lock -> Suplex, 13. Tornado Kick
       </p>
     </div>
   </section>
